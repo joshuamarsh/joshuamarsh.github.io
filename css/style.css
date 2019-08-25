@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 8vh;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+}
+nav ul li {
+  text-decoration: none;
+}
+.background {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 92vh;
+  animation: resize-img 2s forwards ease-in-out;
+  object-fit: cover;
+  z-index: -1;
+}
+.home {
+  height: 86vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.line {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  text-align: center;
+  height: 3px;
+  width: 40vw;
+  background-color: white;
+}
+.name {
+  font-size: 4rem;
+  text-align: center;
+}
+.textdesc {
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+}
+.scrolldown {
+  height: 65px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.scrolldown img {
+  width: 30px;
+  height: 30px;
+  animation: scrolldownbounce 1s infinite alternate;
+}
+.section-title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.projects-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.projects {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+}
+.project-container {
+  padding: 20px;
+}
+.project {
+  padding: 20px;
+  height: 285px;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+.project h3 {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.project-buttons {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 50px;
+}
+.project-buttons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  width: 120px;
+  height: 30px;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 2px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.about {
+  width: 1200px;
+  padding: 20px;
+  height: 400px;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+.about-container {
+  display: flex;
+  justify-content: center;
+}
+@keyframes resize-img {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 95%;
+    left: 2.5%;
+  }
+}
+@keyframes scrolldownbounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
