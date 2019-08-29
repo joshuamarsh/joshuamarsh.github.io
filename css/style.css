@@ -4,19 +4,31 @@
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
-
+html {
+  scroll-behavior: smooth;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+li a {
+  text-decoration: none;
+  color: black;
+}
 nav {
   background-color: white;
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 8vh;
+  z-index: 100;
 }
 nav ul {
   list-style: none;
   display: flex;
   justify-content: space-around;
-  width: 30%;
+  width: 95%;
 }
 nav ul li {
   text-decoration: none;
@@ -36,6 +48,7 @@ nav ul li {
   justify-content: center;
   align-items: center;
   color: white;
+  padding: 30px;
 }
 .home-container {
   display: flex;
@@ -47,17 +60,19 @@ nav ul li {
   margin-bottom: 8px;
   text-align: center;
   height: 3px;
-  width: 40vw;
   background-color: white;
+  animation: fade-in 4s;
 }
 .name {
-  font-size: 4rem;
+  font-size: 2rem;
   text-align: center;
+  animation: fade-in 4s;
 }
 .textdesc {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: white;
   text-align: center;
+  animation: fade-in 4s;
 }
 .scrolldown {
   height: 65px;
@@ -85,14 +100,14 @@ nav ul li {
   max-width: 1200px;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 .project-container {
   padding: 20px;
 }
 .project {
   padding: 20px;
-  height: 285px;
+  height: 350px;
   position: relative;
   background-color: #fff;
   box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.2);
@@ -110,9 +125,71 @@ nav ul li {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  height: 50px;
+  padding: 20px;
 }
 .project-buttons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  width: 120px;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 2px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.about {
+  max-width: 1160px;
+  width: 95%;
+  padding: 20px;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+.about-container {
+  display: flex;
+  justify-content: center;
+}
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.skills img {
+  width: 70px;
+  height: 70px;
+  padding: 5px;
+}
+.about h3 {
+  width: 100%;
+  text-align: center;
+}
+.skills h4 {
+  text-align: center;
+  padding: 20px;
+}
+.skill-container {
+  margin-top: 20px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.skill-icon-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.summary {
+  padding: 30px;
+}
+.cv {
+  display: flex;
+  justify-content: center;
+}
+.cv a {
+  margin: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -127,18 +204,44 @@ nav ul li {
   font-weight: 700;
   cursor: pointer;
 }
-.about {
-  width: 1200px;
+#contact {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+.contact-container {
+  max-width: 1160px;
+  width: 95%;
   padding: 20px;
-  height: 400px;
   position: relative;
   background-color: #fff;
   box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.2);
   border-radius: 20px;
 }
-.about-container {
+.contact-icons {
+  display: flex;
+  justify-content: space-around;
+}
+.contact-icons img {
+  width: 80px;
+  height: 80px;
+}
+footer {
+  box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.2);
+  height: 80px;
+  margin-top: 60px;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 @keyframes resize-img {
   0% {
@@ -155,5 +258,26 @@ nav ul li {
   }
   to {
     transform: translateY(10px);
+  }
+}
+@media (min-width: 350px) {
+  nav ul {
+    width: 80%;
+  }
+}
+@media (min-width: 576px) {
+  .name {
+    font-size: 4rem;
+  }
+  .textdesc {
+    font-size: 2rem;
+  }
+  nav ul {
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  nav ul {
+    width: 30%;
   }
 }
