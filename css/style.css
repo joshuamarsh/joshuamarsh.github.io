@@ -107,7 +107,7 @@ nav ul li {
 }
 .project {
   padding: 20px;
-  height: 350px;
+  height: 500px;
   position: relative;
   background-color: #fff;
   box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.2);
@@ -234,6 +234,11 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.project img {
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 @keyframes fade-in {
   from {
